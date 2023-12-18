@@ -7,12 +7,12 @@ const options = {
         gl: 'US'
     },
     headers: {
-        'X-RapidAPI-Key': process.env.REACT_APP_YOUTUBE_API_KEY,
+        'X-RapidAPI-Key': 'f7651d3ca3msh61b807f79d1fe85p1bcb2bjsn0f5b559ab209',
         'X-RapidAPI-Host': 'youtube138.p.rapidapi.com'
     }
 };
 
-const fetchDataFromApi = async (url)=>{
+export const fetchDataFromApi = async (url)=>{
     const {data} = await axios.get(`${BASE_URL}/${url}`, options)
     return data;
 }
