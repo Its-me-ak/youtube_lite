@@ -9,7 +9,7 @@ import {RiVideoAddLine} from 'react-icons/ri'
 import {FiBell} from 'react-icons/fi'
 import {CgClose} from 'react-icons/cg'
 import { Context } from '../context/ContextApi'
-// import Loader from '../shared/loader'
+import Loader from '../shared/Loader'
 
 const Header = () => {
   const {searchQuery, setSearchQuery} = useState("");
@@ -32,8 +32,17 @@ const Header = () => {
 
 
   return (
-    <div className='sticky top-0 z-10 flex flex-row items-center'>
-      
+    <div className='sticky top-0 z-10 flex flex-row items-center justify-between h-14 px-4 md:px-5 bg-white dark:bg-black'>
+      {loading && <Loader/>}
+      <div className="flex h-5 items-center">
+        {pageName !== "video" && (
+          <div className="flex md:hidden md:mr-6 cursor-pointer items-center justify-center h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]" onClick={MobileMenuToggle} >
+            {mobileMenu ? (<CgClose className='text-white text-xl' />) : (<SlMenu className='text-white text-xl' />)}
+          </div>
+        )}
+
+        
+      </div>
     </div>
   )
 }
