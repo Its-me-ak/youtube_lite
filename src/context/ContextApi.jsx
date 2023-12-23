@@ -13,9 +13,9 @@ export const AppContext = (props) => {
         fetchSelectedCategoryData(selectCategories)
     }, [selectCategories])
 
-    const fetchSelectedCategoryData = (query) =>{
+    const fetchSelectedCategoryData = (query) => {
         setLoading(true);
-        fetchDataFromApi(`search/?q=${query}`).then(({ contents }) =>{
+        fetchDataFromApi(`search/?q=${query}`).then(({ contents }) => {
             // console.log(contents);
             setSearchResult(contents)
             setLoading(false);
@@ -25,12 +25,12 @@ export const AppContext = (props) => {
     return (
         <Context.Provider value={{
             loading,
-            searchResult, 
-            selectCategories, 
+            searchResult,
             mobileMenu,
             setLoading,
-            setSearchResult, 
-            setSelectCategories, 
+            setSearchResult,
+            selectCategories,
+            setSelectCategories,
             setMobileMenu
         }}>
             {props.children}
