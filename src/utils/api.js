@@ -7,7 +7,7 @@
 //         gl: 'US'
 //     },
 //     headers: {
-//         'X-RapidAPI-Key': '"YOUR_API_KEY",',
+//         'X-RapidAPI-Key': "YOUR_API_KEY",
 //         'X-RapidAPI-Host': 'youtube138.p.rapidapi.com'
 //     }
 // };
