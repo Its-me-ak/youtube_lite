@@ -92,9 +92,10 @@ const VideoDetails = () => {
         </div>
 
         <div className="flex flex-col py-6 px-4 overflow-y-auto lg:w-[350px] xl:w-[400px]">
-          {relatedVideos.contents.map((item, i)=>{
+          {relatedVideos?.contents?.map((item, i)=>{
+            if(item?.type !== "video") return false
             return (
-              <SuggestionVideoCard key={i} video={item.video}/>
+              <SuggestionVideoCard key={i} video={item?.video}/>
             )
           })}
         </div>
