@@ -24,7 +24,7 @@ const VideoDetails = () => {
   const fetchVideoDetails = () => {
     setLoading(true);
     fetchDataFromApi(`video/details/?id=${id}`).then((res) => {
-      console.log(res);
+      // console.log(res);
       setVideo(res)
       setLoading(false)
     })
@@ -48,6 +48,7 @@ const VideoDetails = () => {
               width={`100%`}
               height={`100%`}
               style={{ backgroundColor: "#000" }}
+              playing={true}
             />
           </div>
 
