@@ -1,5 +1,4 @@
 import axios  from "axios";
-
 const BASE_URL = 'https://youtube138.p.rapidapi.com'
 const options = {
     params: {
@@ -17,3 +16,4 @@ export const fetchDataFromApi = async (url)=>{
     (`${BASE_URL}/${url}`, options)
     return data;
 }
+
