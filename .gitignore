@@ -10,7 +10,8 @@
 
 # production
 /build
-
+# Api js
+/src/utils
 # misc
 .DS_Store
 .env.local
