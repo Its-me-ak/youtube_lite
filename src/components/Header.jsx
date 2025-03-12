@@ -33,7 +33,7 @@ const Header = () => {
 
 
   return (
-    <div className='sticky top-0 z-10 flex flex-row items-center justify-between h-14 px-4 md:px-5 bg-white dark:bg-black'>
+    <div className='sticky top-0 z-10 flex flex-row items-center justify-between h-14 px-4 md:px-5 bg-black'>
       {loading && <Loader />}
       <div className="flex h-5 items-center">
         {pageName !== "video" && (
@@ -54,7 +54,7 @@ const Header = () => {
           </div>
           <input type="text" className='bg-transparent outline-none text-white pr-5 pl-5 md:pl-0 w-44 md:group-focus-within:pl-0 md:w-64 lg:w-[500px]' onChange={(e) => setSearchQuery(e.target.value)} onKeyUp={SearchQueryHandle} value={searchQuery} />
         </div>
-        <button className='w-[40px] md:w-[60px] h-8 md:h-10 flex items-center justify-center border border-l-0 border-[#303030] rounded-r-3xl bg-white/[0.1]'>
+        <button className='w-[40px] md:w-[60px] h-8 md:h-10 flex items-center justify-center border border-l-0 border-[#303030] rounded-r-3xl bg-white/[0.1]' onClick={() => SearchQueryHandle("searchButton")}>
           <IoIosSearch className='text-white text-2xl' />
         </button>
 

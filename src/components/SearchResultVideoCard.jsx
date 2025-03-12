@@ -13,6 +13,7 @@ const SearchResultVideoCard = ({ video }) => {
           <img
             className="h-full w-full object-cover"
             src={video?.thumbnails[0]?.url}
+            alt=""
           />
           {video?.lengthSeconds && (
             <VideoLength time={video?.lengthSeconds} />
@@ -22,7 +23,7 @@ const SearchResultVideoCard = ({ video }) => {
           <span className="text-lg md:text-2xl font-semibold line-clamp-2 text-white">
             {video?.title}
           </span>
-          <span className="empty:hidden text-sm line-clamp-1 md:line-clamp-2 text-white/[0.7] md:pr-24 md:my-4">
+          <span className="empty:hidden text-sm line-clamp-1 md:line-clamp-2 text-white/[0.7] md:pr-24 md:my-3">
             {video?.descriptionSnippet}
           </span>
           <div className="hidden md:flex items-center">
@@ -31,6 +32,7 @@ const SearchResultVideoCard = ({ video }) => {
                 <img
                   className="h-full w-full object-cover"
                   src={video?.author?.avatar[0]?.url}
+                  alt=""
                 />
               </div>
             </div>
@@ -45,7 +47,7 @@ const SearchResultVideoCard = ({ video }) => {
               <div className="flex text-sm font-semibold text-white/[0.7] truncate overflow-hidden">
                 <span>{`${abbreviateNumber(
                   video?.stats?.views,
-                  2
+                  0
                 )} views`}</span>
                 <span className="flex text-[24px] leading-none font-bold text-white/[0.7] relative top-[-10px] mx-1">
                   .

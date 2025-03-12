@@ -1,9 +1,11 @@
-import axios  from "axios";
-const BASE_URL = 'https://youtube138.p.rapidapi.com'
+import axios from "axios";
+// const BASE_URL = 'https://youtube138.p.rapidapi.com'
+const BASE_URL = 'https://youtube-v2.p.rapidapi.com'
 const options = {
     params: {
         hl: 'en',
         gl: 'US'
+
     },
     headers: {
         'X-RapidAPI-Key': "9a560c4216msh14caa1c3c29dfb0p1be18bjsn56cf350bbe2a",
@@ -11,9 +13,9 @@ const options = {
     }
 };
 
-export const fetchDataFromApi = async (url)=>{
-    const {data} = await axios.get
-    (`${BASE_URL}/${url}`, options)
+export const fetchDataFromApi = async (url) => {
+    const { data } = await axios.get(`${BASE_URL}/${url}`, options)
+    console.log(data);
     return data;
 }
 

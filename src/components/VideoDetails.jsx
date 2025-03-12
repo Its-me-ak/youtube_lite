@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import ReactPlayer from "react-player/youtube";
-import { BsFillCheckCircleFill } from "react-icons/bs";
 import { AiOutlineLike } from "react-icons/ai";
 import { abbreviateNumber } from "js-abbreviation-number";
 
@@ -81,22 +80,22 @@ const VideoDetails = () => {
             <div className="flex text-white mt-4 md:mt-0">
               <div className="flex items-center justify-center h-11 px-6 rounded-3xl bg-white/[0.15]">
                 <AiOutlineLike className="text-xl text-white mr-2" />
-                <span>{`${abbreviateNumber(video?.stats?.likes, 2)} Likes`}</span>
+                <span>{`${abbreviateNumber(video?.stats?.likes, 0)} Likes`}</span>
               </div>
 
               <div className="flex items-center justify-center h-11 px-6 rounded-3xl bg-white/[0.15] ml-4">
                 <AiOutlineLike className="text-xl text-white mr-2" />
-                <span>{`${abbreviateNumber(video?.stats?.views, 2)} Views`}</span>
+                <span>{`${abbreviateNumber(video?.stats?.views, 0)} Views`}</span>
               </div>
             </div>
           </div>
         </div>
 
         <div className="flex flex-col py-6 px-4 overflow-y-auto lg:w-[350px] xl:w-[400px]">
-          {relatedVideos?.contents?.map((item, i)=>{
-            if(item?.type !== "video") return false
+          {relatedVideos?.contents?.map((item, i) => {
+            if (item?.type !== "video") return false
             return (
-              <SuggestionVideoCard key={i} video={item?.video}/>
+              <SuggestionVideoCard key={i} video={item?.video} />
             )
           })}
         </div>
